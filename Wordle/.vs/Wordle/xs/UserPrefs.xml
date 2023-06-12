@@ -1,4 +1,30 @@
 ﻿<Properties StartupConfiguration="{C5E9A2F0-D7A0-43C4-99B6-55191CD40DCD}|Default">
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Wordle FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Wordle/GameState.cs">
+    <Files>
+      <File FileName="Wordle/MainPage.xaml.cs" Line="46" Column="1" />
+      <File FileName="Wordle/MainPage.xaml" Line="42" Column="45" />
+      <File FileName="Wordle/MauiProgram.cs" Line="24" Column="2" />
+      <File FileName="Wordle/GameState.cs" Line="19" Column="13" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Wordle" expanded="True">
+            <Node name="Wordle" expanded="True">
+              <Node name="GameState.cs" selected="True" />
+              <Node name="MainPage.xaml" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Wordle PreferredExecutionTarget="MyAppleMacCatalystID" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MyAppleMacCatalystID" />
 </Properties>
