@@ -5,14 +5,13 @@
       <File FileName="Wordle/MainPage.xaml.cs" Line="46" Column="1" />
       <File FileName="Wordle/MainPage.xaml" Line="42" Column="45" />
       <File FileName="Wordle/MauiProgram.cs" Line="24" Column="2" />
-      <File FileName="Wordle/GameState.cs" Line="19" Column="13" />
+      <File FileName="Wordle/GameState.cs" Line="25" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Wordle" expanded="True">
             <Node name="Wordle" expanded="True">
-              <Node name="GameState.cs" selected="True" />
               <Node name="MainPage.xaml" expanded="True" />
             </Node>
           </Node>
