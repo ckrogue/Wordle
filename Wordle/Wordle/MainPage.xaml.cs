@@ -25,8 +25,8 @@ public partial class MainPage : ContentPage
             for (int j = 0; j < 5; j++)
 			{
 				Label temp = new Label();
-				temp.HeightRequest = 100;
-				temp.WidthRequest = 100;
+				temp.HeightRequest = 60;
+				temp.WidthRequest = 60;
 				temp.BackgroundColor = Colors.MediumPurple;
 				temp.TextColor = Colors.Black;
 				temp.HorizontalTextAlignment = TextAlignment.Center;
@@ -43,8 +43,14 @@ public partial class MainPage : ContentPage
 
     void typeBox_TextChanged(System.Object sender, Microsoft.Maui.Controls.TextChangedEventArgs e)
     {
-		
-		updateBoard(game.getText(typeBox.Text), game.row);
+		if(game.row > 5)
+		{
+			gameOver(false);
+		}
+		else
+		{
+            updateBoard(game.getText(typeBox.Text), game.row);
+        }
     }
 	private void updateBoard(char[] text, int row)
 	{
@@ -65,34 +71,74 @@ public partial class MainPage : ContentPage
 		}
 
 	}
+	private async void gameOver(bool winOrLose)
+	{
+		bool answer;
+		if(winOrLose)
+		{
+            answer = await DisplayAlert("You Won!", "Play Again?", "Yes", "No");
+        }
+		else
+		{
+            answer = await DisplayAlert("You Lost", "The answer was  do you want to play again?", "Yes", "No");
+        }
+		if(answer)
+		{
+			game = new GameState();
+			resetBoard();
+		}
+	}
 
+	private void resetBoard()
+	{
+		for(int row = 0; row < 6; row++)
+		{
+			for(int node = 0; node < 5; node++)
+			{
+				words[row][node].BackgroundColor = Colors.MediumPurple;
+				words[row][node].Text = "";
+            }
+		}
+	}
 
     void typeBox_Completed(System.Object sender, System.EventArgs e)
     {
 		updateRowColors(game.row, game.getCorrect(typeBox.Text));
 		game.row = game.row + 1;
-		typeBox.Text = "";
-		typeBox.Focus();
+		if (game.row == 7)
+		{
+			gameOver(false);
+		}
+		else
+		{
+			typeBox.Text = "";
+			typeBox.Focus();
+		}
     }
 	public void updateRowColors(int row, int[] correct)
 	{
+		bool win = true;
 		for(int i = 0; i < correct.Count(); i++)
 		{
 			if (correct[i] == 0)
 			{
 				words[row][i].BackgroundColor = Colors.Red;
+				win = false;
 			}
             else if (correct[i] == 1)
             {
                 words[row][i].BackgroundColor = Colors.Yellow;
+				win = false;
             }
             else
             {
                 words[row][i].BackgroundColor = Colors.Green;
             }
-
-
         }
+		if(win)
+		{
+			gameOver(true);
+		}
 
     }
 

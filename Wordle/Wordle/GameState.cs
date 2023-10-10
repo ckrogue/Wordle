@@ -4,12 +4,17 @@ namespace Wordle
     public class GameState
     {
         public int row;
+        private List<string> wordBank;
         private string word;
+        
         
         public GameState()
         {
             row = 0;
-            word = "soare";
+            wordBank = new List<string>() {"audio", "below", "blade", "motor", "music", "power",
+                "sharp", "slide" };
+            Random rnd = new Random();
+            word = wordBank[rnd.Next(0, wordBank.Count() - 1)];
         }
 
         public char[] getText(string newText)

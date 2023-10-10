@@ -12,34 +12,34 @@ build_property.EnableSingleFileAnalyzer = true
 build_property.EnableTrimAnalyzer = false
 build_property.IncludeAllContentForSelfExtract = 
 build_property.RootNamespace = Wordle
-build_property.ProjectDir = /Users/colinkrogue/Projects/Wordle/Wordle/Wordle/
+build_property.ProjectDir = C:\Users\colin\source\repos\Wordle\Wordle\Wordle\
 
-[/Users/colinkrogue/Projects/Wordle/Wordle/Wordle/App.xaml]
+[C:/Users/colin/source/repos/Wordle/Wordle/Wordle/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Wordle.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[/Users/colinkrogue/Projects/Wordle/Wordle/Wordle/AppShell.xaml]
+[C:/Users/colin/source/repos/Wordle/Wordle/Wordle/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Wordle.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[/Users/colinkrogue/Projects/Wordle/Wordle/Wordle/MainPage.xaml]
+[C:/Users/colin/source/repos/Wordle/Wordle/Wordle/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Wordle.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[/Users/colinkrogue/Projects/Wordle/Wordle/Wordle/Resources/Styles/Colors.xaml]
+[C:/Users/colin/source/repos/Wordle/Wordle/Wordle/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Wordle.Resources.Styles.Colors.xaml
-build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Colors.xaml
-build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[/Users/colinkrogue/Projects/Wordle/Wordle/Wordle/Resources/Styles/Styles.xaml]
+[C:/Users/colin/source/repos/Wordle/Wordle/Wordle/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Wordle.Resources.Styles.Styles.xaml
-build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Styles.xaml
-build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml

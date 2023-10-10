@@ -4,7 +4,7 @@
              x:Class="Wordle.MainPage"
              BackgroundColor="Pink">
 
-        <VerticalStackLayout
+         <VerticalStackLayout
             Spacing="50">
 
             <Label
