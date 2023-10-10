@@ -1,7 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
 
 namespace Wordle;
-
+/// <summary>
+/// Launches the maui app
+/// </summary>
 public static class MauiProgram
 {
 	public static MauiApp CreateMauiApp()

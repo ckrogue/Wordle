@@ -1,16 +1,25 @@
 ﻿namespace Wordle;
-
+/// <summary>
+/// This class directly controls the view of the word game. This class represents the view of the game
+/// and has methods which can update and keep track of the view of the game
+/// </summary>
 public partial class MainPage : ContentPage
 {
 	List<List<Label>> words;
 	GameState game;
+	/// <summary>
+	/// This constructor initializes the board for the game and makes a new gamestate object
+	/// which is used to keep track of the internals of the game
+	/// </summary>
 	public MainPage()
 	{
 		InitializeComponent();
 		initializeGame();
 		game = new GameState();
 	}
-
+	/// <summary>
+	/// This method creates the board for the game.
+	/// </summary>
 	private void initializeGame()
 	{
         words = new List<List<Label>>();
@@ -20,8 +29,6 @@ public partial class MainPage : ContentPage
 			HorizontalStackLayout word = new HorizontalStackLayout();
 			word.Spacing = 10;
 			word.HorizontalOptions = LayoutOptions.Center;
-
-
             for (int j = 0; j < 5; j++)
 			{
 				Label temp = new Label();
@@ -35,12 +42,17 @@ public partial class MainPage : ContentPage
 				word.Add(temp);
 				labels.Add(temp);
 			}
-			
 			Board.Add(word);
 			words.Add(labels);
 		}
 	}
-
+	/// <summary>
+	/// This method is called when the text in the typebox is changed.
+	/// It updates the board with the new text. If the user has already filled up all the rows
+	/// it makes the game quit
+	/// </summary>
+	/// <param name="sender"></param>
+	/// <param name="e"></param>
     void typeBox_TextChanged(System.Object sender, Microsoft.Maui.Controls.TextChangedEventArgs e)
     {
 		if(game.row > 5)
@@ -52,6 +64,11 @@ public partial class MainPage : ContentPage
             updateBoard(game.getText(typeBox.Text), game.row);
         }
     }
+	/// <summary>
+	/// This method updates the board to have the current word being typed on it
+	/// </summary>
+	/// <param name="text">text to be put on board</param>
+	/// <param name="row">row of the board</param>
 	private void updateBoard(char[] text, int row)
 	{
 		int i = 0;
@@ -66,11 +83,15 @@ public partial class MainPage : ContentPage
 			{
 				letter.Text = "";
 			}
-
 			i++;
 		}
 
 	}
+	/// <summary>
+	/// This method gives the user a pop up when the game is over asking if they want to play again.
+	/// If they select yes it restarts the game, if they select no nothing is done.
+	/// </summary>
+	/// <param name="winOrLose">send in true if the user won, false otherwise</param>
 	private async void gameOver(bool winOrLose)
 	{
 		bool answer;
@@ -88,7 +109,9 @@ public partial class MainPage : ContentPage
 			resetBoard();
 		}
 	}
-
+	/// <summary>
+	/// This method resets the board to its original state, without any words on it.
+	/// </summary>
 	private void resetBoard()
 	{
 		for(int row = 0; row < 6; row++)
@@ -100,12 +123,17 @@ public partial class MainPage : ContentPage
             }
 		}
 	}
-
+	/// <summary>
+	/// Upon enter being pressed in the typebox, this method updates the colors on the board to reflect
+	/// how correct each of the letters are
+	/// </summary>
+	/// <param name="sender"></param>
+	/// <param name="e"></param>
     void typeBox_Completed(System.Object sender, System.EventArgs e)
     {
 		updateRowColors(game.row, game.getCorrect(typeBox.Text));
 		game.row = game.row + 1;
-		if (game.row == 7)
+		if (game.row == 6)
 		{
 			gameOver(false);
 		}
@@ -115,6 +143,13 @@ public partial class MainPage : ContentPage
 			typeBox.Focus();
 		}
     }
+	/// <summary>
+	/// This method updates the colors of the row to match how correct the word
+	/// put in is. If the word is completely correct this method ends the game
+	/// </summary>
+	/// <param name="row">number of row currently on</param>
+	/// <param name="correct">This array has a 0 if a letter is false, 1 if it is right but in the wrong spot
+	/// and 2 if correct</param>
 	public void updateRowColors(int row, int[] correct)
 	{
 		bool win = true;
